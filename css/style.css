@@ -38,6 +38,15 @@ header ul {
     padding: 12px;
     margin: 12px;
     width: 100%;
+    
+}
+
+#main-items {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    padding-bottom: 20px;
 }
 
 .item {
