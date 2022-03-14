@@ -23,6 +23,7 @@ $(document).ready(function () {
                     item_html += '</div>';
                     item_html += '<br style="clear:left;"></br>';
                     $('#main-items').append(item_html);
+                    //end of function
                 });
             }
         });
