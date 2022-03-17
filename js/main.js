@@ -1,7 +1,7 @@
 $(document).ready(function () {
   $(".main-ecom").hide();
 
-  if (getCookie("token") != undefined) {
+  if (getCookie("token") != undefined && getCookie("token").length != 0 ) {
     $(".login").hide();
     $(".main-ecom").show();
     //get products
@@ -52,10 +52,7 @@ $(document).ready(function () {
   // var userEmail=getCookie("token");//"bobthegreat@gmail.com"
 
   $("#login-btn").on("click", function (e) {
-    //     const data = {
-    //       username: $("#UserName").val(),
-    //       password: $("#password").val()
-    //    };
+    
     e.preventDefault();
 
     $.ajax({
@@ -101,5 +98,23 @@ $(document).ready(function () {
         });
       },
     });
+    $("#UserName").val('');
+    $("#password").val('');
+
+  });
+
+
+  function deleteCookie(name) { setCookie(name, '', -1); }
+
+  $("#logout").on("click", function (e) {
+    
+    e.preventDefault();
+
+    //getCookie("token") = undefined);
+    
+    deleteCookie("token");
+   
+    $(".main-ecom").hide();
+    $(".login").show();
   });
 });
