@@ -1,7 +1,9 @@
 $(document).ready(function () {
   $(".main-ecom").hide();
+  $("#register").hide();
+  $("#image").hide();
 
-  if (getCookie("token") != undefined && getCookie("token").length != 0 ) {
+  if (getCookie("token") != undefined && getCookie("token").length != 0) {
     $(".login").hide();
     $(".main-ecom").show();
     //get products
@@ -48,11 +50,7 @@ $(document).ready(function () {
     return null;
   }
 
-  //setCookie("user_email","bobthegreat@gmail.com",30); //set "user_email" cookie, expires in 30 days
-  // var userEmail=getCookie("token");//"bobthegreat@gmail.com"
-
   $("#login-btn").on("click", function (e) {
-    
     e.preventDefault();
 
     $.ajax({
@@ -62,10 +60,20 @@ $(document).ready(function () {
         username: $("#UserName").val(),
         password: $("#password").val(),
       },
-      // dataType: "dataType",
+      beforeSend: function () {
+        $("#image").show();
+      },
+      error: function () {
+        $("#loaderDiv").hide();
+        $(".main1 .login-form").prepend(
+          '<div class="alert alert-danger" role="alert">Username / Password combination is invalid! </div>'
+        );
+      },
       success: function (response) {
-        alert("User logged in successfully");
-        // $.cookie("token", response.token, { expires: 7 , path: '/' });
+        $("#loaderDiv").hide();
+        $(".main1 .login-form").prepend(
+          '<div class="alert alert-success" role="alert">Successfully logged in </div>'
+        );
         setCookie("token", response.token, 10);
         $(".login").hide();
         $(".main-ecom").show();
@@ -98,23 +106,59 @@ $(document).ready(function () {
         });
       },
     });
-    $("#UserName").val('');
-    $("#password").val('');
-
+    $("#UserName").val("");
+    $("#password").val("");
   });
 
-
-  function deleteCookie(name) { setCookie(name, '', -1); }
+  function deleteCookie(name) {
+    setCookie(name, "", -1);
+  }
 
   $("#logout").on("click", function (e) {
-    
     e.preventDefault();
 
-    //getCookie("token") = undefined);
-    
     deleteCookie("token");
-   
+
     $(".main-ecom").hide();
     $(".login").show();
+  });
+
+  $("#register-btn").on("click", function (e) {
+    e.preventDefault();
+
+    $(".main-ecom").hide();
+    $(".login").hide();
+    $("#register").show();
+  });
+
+  $("#submit").on("click", function (e) {
+    e.preventDefault();
+    const register = {
+      firstName: $("#firstName").val(),
+      lastName: $("#lastName").val(),
+      userEmail: $("#inputEmail4").val(),
+      password: $("#inputPassword4").val(),
+      address: $("#inputAddress").val(),
+      address2: $("#inputAddress2").val(),
+      city: $("#inputCity").val(),
+      state: $("#inputState").val(),
+      zip: $("#inputZip").val(),
+    };
+    $.ajax({
+      type: "POST",
+      url: "http://localhost/ecom/register",
+      data: register,
+      dataType: "dataType",
+      success: function (response) {
+        console.log("success !")
+      },
+      error: function(e){
+        console.log("error !",e)
+      }
+    });
+
+    
+
+    console.log(register);
   });
 });

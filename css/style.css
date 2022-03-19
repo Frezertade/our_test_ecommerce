@@ -150,3 +150,7 @@ font-size: 24px;
 .logout {
     align-content:right;
 }
+
+#register{
+    margin: 0px 10vw;
+}
