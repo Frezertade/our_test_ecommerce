@@ -16,6 +16,7 @@
 </head>
 
 <body>
+   
     <div class="login">
          <div class="sidenav">
             <div class="login-main-text">
@@ -25,10 +26,14 @@
                 <h5>Tested by : <stron>Amanuel Wolde , Efrata </stron></h5>
             </div>
         </div> 
+
         <div class="main1">
             <div class="col-md-6 col-sm-12">
                 <div class="login-form">
                     <form>
+                        <div id="loaderDiv">
+                            <img id = "image" class="rounded float-right" src="./js/assests/0_ptDX0HfJCYpo9Pcs.gif"  width="200" alt="spinner" >
+                        </div>
                         <div class="form-group">
                             <label>User Name</label>
                             <input type="text" class="form-control" id ="UserName" placeholder="User Name">
@@ -38,7 +43,7 @@
                             <input type="password" class="form-control" id  = "password" placeholder="Password">
                         </div>
                         <button type="submit" id="login-btn" class="btn btn-outline-dark">Login</button>
-                        <button type="submit" class="btn btn-secondary">Register</button>
+                        <button type="submit" id="register-btn" class="btn btn-secondary">Register</button>
                     </form>
                 </div>
             </div>
@@ -82,6 +87,107 @@
             <br style="clear:left;">
         </div>
     </div>
+</div>
+
+
+
+
+    <div  id ="register" class="user-register">
+        <center>
+        <div>
+            <h1>Our E-comm User Registration</h1>
+        </div>
+        </center>
+        <form class="row g-3">
+            <div class="col-md-6">
+                <label class="form-label">First Name</label>
+                <input type="text" class="form-control" id="firstName">
+            </div>
+            <div class="col-md-6"">
+                <label class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="lastName">
+            </div>
+            <div class="col-md-6">
+                <label for="inputEmail4" class="form-label">Email</label>
+                <input type="email" class="form-control" id="inputEmail4">
+            </div>
+            <div class="col-md-6">
+                <label for="inputPassword4" class="form-label">Password</label>
+                <input type="password" class="form-control" id="inputPassword4">
+            </div>
+            <div class="col-12">
+                <label for="inputAddress" class="form-label">Address</label>
+                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+            </div>
+            <div class="col-12">
+                <label for="inputAddress2" class="form-label">Address 2</label>
+                <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+            </div>
+            <div class="col-md-6">
+                <label for="inputCity" class="form-label">City</label>
+                <input type="text" class="form-control" id="inputCity">
+            </div>
+            <div class="col-md-4">
+                <label for="inputState" class="form-label">State</label>
+                <select id="inputState" class="form-select">
+                    <option selected="">Choose...</option>
+                    <option>Alabama</option>
+                    <option>Alaska</option>
+                    <option>Arizona</option>
+                    <option>Arkansas</option>
+                    <option>California</option>
+                    <option>Colorado</option>
+                    <option>Connecticut</option>
+                    <option>Delaware</option>
+                    <option>Florida</option>
+                    <option>Georgia</option>
+                    <option>Hawaii</option>
+                    <option>Idaho</option>
+                    <option>Illinois</option>
+                    <option>Indiana</option>
+                    <option>Iowa</option>
+                    <option>Kansas</option>
+                    <option>Kentucky</option>
+                    <option>Louisiana</option>
+                    <option>Maine</option>
+                    <option>Maryland</option>
+                    <option>Massachusetts</option>
+                    <option>Michigan</option>
+                    <option>Mississippi</option>
+                    <option>Missouri</option>
+                    <option>Montana</option>
+                    <option>Nebraska</option>
+                    <option>Nevada</option>
+                    <option>New Hampshire</option>
+                    <option>New Jersey</option>
+                    <option>New Mexico</option>
+                    <option>New York</option>
+                    <option>North Carolina</option>
+                    <option>North Dakota</option>
+                    <option>Tennessee</option>
+                    <option>Texas</option>
+                    <option>Utah</option>
+                    <option>Vermont</option>
+                    <option>Virginia</option>
+                    <option>Washington</option>
+                    <option>Washington DC</option>
+                    <option>West Virginia</option>
+                    <option>Wisconsin</option>
+                    <option>Wyoming</option>
+                </select>
+            </div>
+            <div class="col-md-2" id="zip">
+                <label for="inputZip" class="form-label">Zip</label>
+                <input type="text" class="form-control" id="inputZip">
+            </div>
+            <div class="col-12" id="submit">
+                <button type="submit" class="btn btn-primary">Submitt</button>
+            </div>
+        </form>
+        
+    </div>
+       
 </body>
 
 </html>
+
