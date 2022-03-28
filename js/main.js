@@ -52,6 +52,7 @@ $(document).ready(function () {
 
   $("#login-btn").on("click", function (e) {
     e.preventDefault();
+    $(".alert").alert('close')
 
     $.ajax({
       type: "POST",
@@ -71,9 +72,19 @@ $(document).ready(function () {
       },
       success: function (response) {
         $("#loaderDiv").hide();
-        $(".main1 .login-form").prepend(
-          '<div class="alert alert-success" role="alert">Successfully logged in </div>'
+        $(".main1 .login-form").prepend('<div class="alert alert-success alert-dismissible fade show" role="alert">'+
+        '<strong>LoggedIn Successfully!</strong> Please hit the "ok" button to proceed.'+
+        '<button type="button" class="close" data-dismiss="alert" aria-label="Close">'+
+          '<span aria-hidden="true">Ok</span>'+
+        '</button>'+
+      '</div>'
+  
         );
+
+        $(".close").on("click", function (e) {
+          e.preventDefault();
+        $(".alert").alert('close')
+        
         setCookie("token", response.token, 10);
         $(".login").hide();
         $(".main-ecom").show();
@@ -104,7 +115,9 @@ $(document).ready(function () {
             });
           },
         });
+      });
       },
+    
     });
     $("#UserName").val("");
     $("#password").val("");
