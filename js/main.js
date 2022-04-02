@@ -87,7 +87,7 @@ $(document).ready(function () {
         
         setCookie("token", response.token, 10);
         $(".login").hide();
-        $(".main-ecom").show();
+        //$(".main-ecom").show();
         //get products
         $.ajax({
           type: "Get",
