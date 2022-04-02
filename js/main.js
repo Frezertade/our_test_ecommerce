@@ -70,7 +70,7 @@ $(document).ready(function () {
           '<div class="alert alert-danger" role="alert">Username / Password combination is invalid! </div>'
         );
       },
-      success: function (response) {
+      //success: function (response) {
         $("#loaderDiv").hide();
         $(".main1 .login-form").prepend('<div class="alert alert-success alert-dismissible fade show" role="alert">'+
         '<strong>LoggedIn Successfully!</strong> Please hit the "ok" button to proceed.'+
