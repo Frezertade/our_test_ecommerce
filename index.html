@@ -93,6 +93,7 @@
 
 
     <div  id ="register" class="user-register">
+        <div id="toAppend">
         <center>
         <div>
             <h1>Our E-comm User Registration</h1>
@@ -100,37 +101,43 @@
         </center>
         <form class="row g-3">
             <div class="col-md-6">
-                <label class="form-label">First Name</label>
+                <label class="form-label">First Name<span class="astersik">*</span></label>
                 <input type="text" class="form-control" id="firstName">
             </div>
             <div class="col-md-6"">
-                <label class="form-label">Last Name</label>
+                <label class="form-label">Last Name<span class="astersik">*</span></label>
                 <input type="text" class="form-control" id="lastName">
             </div>
             <div class="col-md-6">
-                <label for="inputEmail4" class="form-label">Email</label>
+                <label for="inputEmail4" class="form-label">Email<span class="astersik">*</span></label>
                 <input type="email" class="form-control" id="inputEmail4">
             </div>
             <div class="col-md-6">
-                <label for="inputPassword4" class="form-label">Password</label>
-                <input type="password" class="form-control" id="inputPassword4">
+                <label for="inputUserName4" class="form-label">UserName<span class="astersik">*</span></label>
+                <input type="text" class="form-control" id="inputUserName4">
             </div>
-            <div class="col-12">
-                <label for="inputAddress" class="form-label">Address</label>
+            
+            <div class="col-md-6">
+                <label for="inputAddress" class="form-label">Address<span class="astersik">*</span></label>
                 <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
             </div>
+            <div class="col-md-6">
+                <label for="inputPassword4" class="form-label">Password<span class="astersik">*</span></label>
+                <input type="password" class="form-control" id="inputPassword4">
+            </div>
+           
             <div class="col-12">
                 <label for="inputAddress2" class="form-label">Address 2</label>
                 <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
             </div>
             <div class="col-md-6">
-                <label for="inputCity" class="form-label">City</label>
+                <label for="inputCity" class="form-label">City<span class="astersik">*</span></label>
                 <input type="text" class="form-control" id="inputCity">
             </div>
             <div class="col-md-4">
-                <label for="inputState" class="form-label">State</label>
+                <label for="inputState" class="form-label">State<span class="astersik">*</span></label>
                 <select id="inputState" class="form-select">
-                    <option selected="">Choose...</option>
+                    <option selected="">Choose...</span></option>
                     <option>Alabama</option>
                     <option>Alaska</option>
                     <option>Arizona</option>
@@ -177,12 +184,15 @@
                 </select>
             </div>
             <div class="col-md-2" id="zip">
-                <label for="inputZip" class="form-label">Zip</label>
+                <label for="inputZip" class="form-label">Zip<span class="astersik">*</label>
                 <input type="text" class="form-control" id="inputZip">
             </div>
-            <div class="col-12" id="submit">
-                <button type="submit" class="btn btn-primary">Submitt</button>
+        </div>
+            <center>
+            <div class="col-12" class="submit">
+                <button id = "submit" type="submit" class="btn btn-primary">Submit</button>
             </div>
+            </center>
         </form>
         
     </div>

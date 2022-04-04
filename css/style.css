@@ -1,5 +1,5 @@
 body {
-    background-color: #eee(253, 239, 216);
+    background-color: #eee,(253, 239, 216);
     font-family: "Lato", sans-serif;
 }
 
@@ -152,5 +152,12 @@ font-size: 24px;
 }
 
 #register{
-    margin: 0px 10vw;
+    margin: 0px 12vw;
+}
+.astersik{
+    color:red;
+}
+#submit{
+    margin-top: 6vw;
+    
 }
